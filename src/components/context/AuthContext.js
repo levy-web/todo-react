@@ -21,7 +21,7 @@ export const AuthContextProvider = ({children}) => {
             "password": password,
             "email": emailaddress
           }
-        fetch('https://levy-projets-api.onrender.com/signup',{
+        fetch('/signup',{
             method: "POST",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify(formData)
@@ -39,7 +39,7 @@ export const AuthContextProvider = ({children}) => {
             "username": username,
             "password": password
           }
-        fetch('https://levy-projets-api.onrender.com/login',{
+        fetch('/login',{
             method: "POST",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify(formData)
@@ -55,7 +55,7 @@ export const AuthContextProvider = ({children}) => {
    
 
     const logout = () => {
-      fetch('https://levy-projets-api.onrender.com/logout')
+      fetch('/logout')
       .then((res)=>res.json())
       .then((data)=>{
         setUserId([])
